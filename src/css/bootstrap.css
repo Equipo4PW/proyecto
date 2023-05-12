@@ -3843,7 +3843,7 @@ textarea.form-control-lg {
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
-  color: #0d6efd;
+  color: #1a760e;
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
@@ -10831,13 +10831,6 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
-}
-
-.navbar .container-fluid .collapse .navbar-nav .nav-item{
-  font-size: 200%;
-  font-family: 'Times New Roman', Times, serif;
-  margin-left: 3%;
-  color: #c5bec5;
 }
 
 /*# sourceMappingURL=bootstrap.css.map */

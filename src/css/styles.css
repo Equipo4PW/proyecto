@@ -1,3 +1,5 @@
-barNavH {
-    display: flex;
+.barNavH {
+    background-color:yellow;
+    font-size: 140%;
+    font-family:'Times New Roman', Times, serif;
 }
