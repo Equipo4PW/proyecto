@@ -5,56 +5,93 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script type="text/javascript">
+      function sendEmail() {
+          Email.send({
+                  Host: "smtp.elasticemail.com",
+                  Username: "pablorm538@gmail.com",
+                  Password: "92A64505AB79CA43F57365D82DDEEA6E69DB",
+                  To: 'pablorm538@gmail.com',
+                  From: "pablorm538@gmail.com",
+                  Subject: "holis",
+                  Body: "Well that was easy!!",
+              })
+              .then(function (message) {
+                  alert("mail sent successfully")
+              });
+      }
+  </script>
+    
+    
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-sm bg-light">
+    <nav class="navbar" style="background-color: rgb(79, 240, 30, 0.733);">
         <div class="container-fluid">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link 1</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link 2</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link 3</a>
-            </li>
-          </ul>
+          <a class="navbar-brand" href="#"><img class="logo" src="https://www.zarla.com/images/zarla-msco-mida-1x1-2400x2400-20220329-7c6yxxf7j94vvg4cqqhd.png?crop=1:1,smart&width=250&dpr=2" width="150px" height="150px"></a>
         </div>
       </nav>
+      <br>
+      <br>
+      <br>
+      <center><h2>Feeling hungry ?</h2></center>
       
-      <div class="container-fluid mt-3">
-        <h3>Basic Navbar Example</h3>
-        <p>A navigation bar is a navigation header that is placed at the top of the page.</p>
-        <p>The navbar-expand-xxl|xl|lg|md|sm class determines when the navbar should stack vertically (on xxlarge, extra large, large, medium or small screens).</p>
+      <center><form class="holis">
+        <input class="h2o" type="text" placeholder="Search for a meal...." style="width: 650px;">
+        <button type="submit" class="btn rounded-pill w-15 text-white" style="background-color: rgb(79, 240, 30, 0.733);"
+        id="get_meal_btn">Search</button>
+      </form> </center>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+  
+<div class="row">
+  <div class="col p-3 bg-primary text-white" style="background-color: rgb(79, 240, 30, 0.733) !important;">
+    <center><figure>
+    <img width="250" height="250" src= "https://www.zarla.com/images/zarla-msco-mida-1x1-2400x2400-20220329-7c6yxxf7j94vvg4cqqhd.png?crop=1:1,smart&width=250&dpr=2"  alt="">
+    </figure></center>
+  </div>
+  <div class="col p-3 bg-dark text-white" style="background-color: rgb(79, 240, 30, 0.733) !important;">
+    <center><h2>"Si la vida te da la espalda"</h2><br><br></center>
+    <center><h3>No eres tú.</h3><br><br></center>
+    <center><p>cosas que he querido </p></center>
+  </div>
+  <div class="col p-3 bg-primary text-white" style="background-color: rgb(79, 240, 30, 0.733) !important;">
+    <center><figure>
+      <div class="container mt-3">
+        <Center><h2>holis Bienvenido a mis recuerdo</h2></Center>
+        <br>
+        <Center><p>"Aqui puedes dejarme un mensajito de que te parece, ten encuenta que va a llegar a mi correo"</p></Center><br>
+        <form method="post">
+          <div class="row">
+            <center><div class="col">
+              <input type="text" class="form-control" placeholder="Enter email" name="email">
+            </div></center>
+            <br><br> 
+            <center><div class="col2">
+              <button type="button" value="send Email" onclick="sendEmail()">enviar</button>
+            </div></center>
+          </div>
+        </form>
       </div>
+    </figure></center>
+  </div>
+</div>
+</div>
 
+</body> 
 
-
-
-
-
-
-
-<h1 id="titulo">gato de tienda</h1>
-<p class="subtitulo">holis</p>
-<p id="title">porque siempre solo
-    <a href="#">link</a>
-</p>
-
-<p>uno</p>
-<p>dos</p>
-<p>tres</p>
-
-<button type="submit" class="btn rounded-pill w-15 text-white" style="background-color: blueviolet;"
-id="get_meal_btn">holiwis</button>
-
-</body>
- 
 <script>
-
-
-
 const paragraphs = document.body.getElementsByTagName("p");
 
 console.log('Colección de nodos: ', paragraphs);
@@ -62,6 +99,6 @@ console.log('Colección de nodos: ', paragraphs);
 console.log('Primer nodo: ', paragraphs[2]);
 console.log('Segundo nodo: ', paragraphs[3]);
 console.log('Tercer nodo: ', paragraphs[4]);
-
 </script>
+
 </html>
