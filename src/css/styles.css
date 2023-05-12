@@ -3,3 +3,7 @@
     font-size: 140%;
     font-family:'Times New Roman', Times, serif;
 }
+
+h1 .titulo {
+    align-content: center;
+}
