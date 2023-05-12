@@ -1,3 +1,19 @@
 .navbar navbar-expand-sm bg-light{
     background-color: chartreuse;
 }
+
+.Fh {
+    font-family:'Trebuchet MS';
+    font-size: 300%;
+}
+
+.lemons {
+    font-family: 'Lucida Sans Unicode';
+    font-size: 150%;
+}
+
+.nav {
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 120%;
+}
