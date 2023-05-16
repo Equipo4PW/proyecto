@@ -25,3 +25,137 @@
 .Kursiva {
     font-style: italic;
 }
+
+
+/*-------------------------------------- Aquí empiezan los media querys --------------------------------------*/
+
+@media (max-width: 575px) {
+    /*.navbarr, .actions {
+        display: none;
+    }*/
+    /*
+        background-color: plum;*/
+    
+    h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+    
+    
+    main {
+        margin-top: 130px;
+    }
+    
+    /*Ajustar el formulario a una vista de celular*/
+    .formu > input {
+        margin-right: 30px;
+        margin-top: 10px;
+        width: 250px;
+    }
+    
+    .publish > form {
+        flex-direction: column;
+        display: flex;
+    }
+    
+    .publish > form > div {
+        height: 50px;
+        margin-top: 10px;
+    }
+        .publish > form > div > input {
+            width: 65%;
+    }
+    
+    .features {
+        grid-template: repeat(4,1fr)/1fr;
+    }
+    
+    }
+    
+    /** dispositivos pequeños en vista landscape (horizontal) */
+    @media (min-width: 576px) and (max-width: 767px) {
+      
+    }
+    
+    /** dispositivos medianos (tablets) */
+    @media (min-width: 768px) and (max-width: 991px) {
+      
+    }
+    
+    /** dispositivos grandes (desktops) */
+    @media (min-width: 992px) and (max-width: 1199px) {
+      
+    }
+    
+    /** dispositivos extra grandes (monitores grandes, tvs) */
+    @media (min-width: 1200px) {
+    }
+    
+    /*Examen Unidad 1 Fecha:27/2/2023*/
+    
+    .encabezado {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        text-align: center;
+        background-color: #e0c5d8;
+        margin-top: 50px;
+    }
+    
+    .encabezado .titulo {
+        color: #c212d9;
+        font-size: 50px;
+    }
+    
+    .encabezado .subtitulo {
+        color: #04767a;
+        font-size: 25px;
+    }
+    
+    .comenzar {
+        color: #04767a;
+        font-size: 30px;
+        background-color: #c8dd7b;
+        border: 2px solid cyan;
+    }
+    
+    /*Encuadres*/
+    
+    .encuadres .cuadros {
+        justify-content: center;
+        /*align-items: center;*/
+    }
+    
+    .cuadros {
+        display: grid;
+        grid-template-columns: repeat(4, 300px); /* (2, 300px 300px) --> Agregar dos columnas de 300 pixeles  */
+        grid-template-rows: repeat(1, 500px);   
+        margin-top: 40px;
+    }
+    
+    .enc {
+        align-items: center;
+        text-align: center;
+        color: #ffffff;
+        border: 2px solid rgb(124, 124, 182);
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+    
+    .enc .logos {
+        width: 128px;
+        height: 120px;
+    }
+    
+    .enc .titen {
+        font-size: 40px;
+        color: #444144;
+    }
+    
+    .enc .descripciones {
+        color: #000000;
+        font-size: 20px;
+    }
+    
+    .sm {
+        font-size: 18px;
+        color: #7a7307;
+    }
