@@ -3,7 +3,7 @@ import "bootstrap";
 import "../css/bootstrap.min.css";
 import { container } from "webpack";
 
-const Aleatorio = document.getElementById("Random");
+/*const Aleatorio = document.getElementById("Random");
 const container = document.getElementById("container");
 
 
@@ -29,10 +29,9 @@ const createMeal = (meal) => {
         }
 
     }
-    const agregandoComida = 
+   const agregandoComida = 
     
     ;
 
     container.innerHTML = agregandoComida;
-}
-
+}*/
