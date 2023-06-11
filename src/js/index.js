@@ -4,7 +4,7 @@ import "../css/bootstrap.min.css";
 import { container } from "webpack";
 
 const Aleatorio = document.getElementById("Random");
-const container = document.getElementById("container");
+const meal_container = document.getElementById("meal_container");
 
 Aleatorio.addEventListener("click", () => {
     fetch('https://www.themealdb.com/api/json/v1/1/random.php')
@@ -29,5 +29,5 @@ const createMeal = (meal) => {
 
     const agregandoComida = "Aquí puedes agregar tu estructura HTML para mostrar la comida y los ingredientes";
 
-    container.innerHTML = agregandoComida;
+    meal_container.innerHTML = agregandoComida;
 };
