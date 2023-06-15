@@ -1,11 +1,9 @@
 import css from "../css/styles.css";
 import "bootstrap";
 import "../css/bootstrap.min.css";
-import { container } from "webpack";
-import InferAsyncModulesPlugin from "webpack/lib/async-modules/InferAsyncModulesPlugin";
 
 const Aleatorio = document.getElementById("Random");
-const contenedor = document.getElementById("meal_container");
+const meal_container = document.getElementById("meal");
 
 Aleatorio.addEventListener("click", () => {
   fetch('https://www.themealdb.com/api/json/v1/1/random.php')
@@ -30,9 +28,9 @@ const createMeal = (meal) => {
 
   const agregandoComida = 
 
-  <h1 class="strIngredient3"></h1>
+  `<img src='${meal.strMealThumb}' alt="">`
     
 ;
 
-  contenedor.innerHTML = agregandoComida;
+  meal_container.innerHTML = agregandoComida;
 }
