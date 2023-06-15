@@ -3,7 +3,7 @@ import "bootstrap";
 import "../css/bootstrap.min.css";
 
 const Aleatorio = document.getElementById("Random");
-const meal_container = document.getElementById("meal");
+const meal_container = document.getElementById("meal"); //El meal crea la comida, es decir se utiliza para llamar a los elementos en el API
 
 Aleatorio.addEventListener("click", () => {
   fetch('https://www.themealdb.com/api/json/v1/1/random.php')
