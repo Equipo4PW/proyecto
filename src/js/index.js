@@ -28,8 +28,40 @@ const createMeal = (meal) => {
 
   const agregandoComida = 
 
-  `<img src='${meal.strMealThumb}' alt="">`
-    
+  `
+  <h1>${meal.strMeal}</h1>
+
+  <img src='${meal.strMealThumb}' alt="">
+
+  <br>
+  <br>
+  <h5>Ingredients:</h5>
+  <h6>${meal.strIngredient1}</h6>
+  <h6>${meal.strIngredient2}</h6>
+  <h6>${meal.strIngredient3}</h6>
+  <h6>${meal.strIngredient4}</h6>
+  <h6>${meal.strIngredient5}</h6>
+  <h6>${meal.strIngredient6}</h6>
+  <h6>${meal.strIngredient7}</h6>
+  <h6>${meal.strIngredient8}</h6>
+  <h6>${meal.strIngredient9}</h6>
+  <h6>${meal.strIngredient10}</h6>
+  <h6>${meal.strIngredient11}</h6>
+  <h6>${meal.strIngredient12}</h6>
+  <h6>${meal.strIngredient13}</h6>
+  <h6>${meal.strIngredient14}</h6>
+  <h6>${meal.strIngredient15}</h6>
+  <h6>${meal.strIngredient16}</h6>
+  <h6>${meal.strIngredient17}</h6>
+  <h6>${meal.strIngredient18}</h6>
+  <h6>${meal.strIngredient19}</h6>
+  <h6>${meal.strIngredient20}</h6>
+  
+  <br>
+  <h5>Instructions:</h5>
+  <p>${meal.strInstructions}</p>
+  
+  `
 ;
 
   meal_container.innerHTML = agregandoComida;
@@ -37,7 +69,7 @@ const createMeal = (meal) => {
 
 //Buscar todo tipo de comida en la barra de búsqueda
 const searchInput = document.getElementById('search');
-const searchButton = document.getElementById('get_meal_btn');
+const searchButton = document.getElementById('button');
 const results = document.getElementById('results');
 
 searchButton.addEventListener('click', searchMeals);
@@ -49,13 +81,13 @@ function searchMeals() {
     const formattedSearch = formatSearchString(search);
     const url = buildUrl(formattedSearch);
 
-    return getGiphyResults(url)
-      .then(function(gifs) {
-        console.log(gifs)
-        gifs.forEach(function(gif) {
+    return getMealResults(url)
+      .then(function(meals) {
+        console.log(meals)
+        gifs.forEach(function(image) {
           const img = document.createElement('img');
-          img.src = gif.images.fixed_height.url;
-          img.alt = gif.title;
+          img.src = image.images.fixed_height.url;
+          img.alt = image.title;
 
           results.appendChild(img)
         })
@@ -68,13 +100,13 @@ function formatSearchString(search) {
 }
 
 function buildUrl (search) {
-  const API_KEY = 'PMBUpuaj3teq6I6sx3mV6DNlO6znGVfC'; // llave de GIPHY
-  const baseUrl = 'https://api.giphy.com/v1/gifs/search';
+  const API_KEY = '1'; // llave de GIPHY
+  const baseUrl = 'www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata';
 
   return `${baseUrl}?q=${search}&api_key=${API_KEY}&limit=9`;
 }
 
-function getGiphyResults(url) {
+function getMealResults(url) {
   return fetch(url)
     .then(function (response) {
       return response.json();
