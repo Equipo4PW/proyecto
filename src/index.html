@@ -30,11 +30,11 @@
 
 <body>
 
-      <nav class="navbar navbar-expand-sm navbar-dark fixed-top" style="background-color: rgb(255, 250, 205);">
-        <header class="container-fluid">
+      <nav class="navbar navbar-expand-sm navbar-dark fixed-top" style="background-color: rgb(255, 250, 205);" id="mainNavbar>
+        <header class= "container-fluid">
             
             <a>
-            <img class="logo" src="https://www.zarla.com/images/zarla-msco-mida-1x1-2400x2400-20220329-7c6yxxf7j94vvg4cqqhd.png?crop=1:1,smart&width=250&dpr=2" height="100px" width="100px"/>
+            <img class="logo" src="https://www.zarla.com/images/zarla-msco-mida-1x1-2400x2400-20220329-7c6yxxf7j94vvg4cqqhd.png?crop=1:1,smart&width=250&dpr=2" height="100px" width="100px"\ id="navbarTogglerButton">
             </a>
 
 
@@ -79,10 +79,10 @@
 
       <br><br><br><br><br><br><br><br>
 
-      <center><h2 class="Fh">Feeling hungry?</h2></center>
+      <center><h2 class= "fh" id="hungerHeading">Feeling hungry?</h2></center>
       
       <center><form class="holis">
-        <input class="h2o rounded-pill w3-half" type="text" placeholder="Search for a meal..." style="width: 650px;">
+        <input class="h2o rounded-pill" type="text" placeholder="Search for a meal..." style="width: 650px;">
         <button type="submit" class="btn rounded-pill w-15 text-white" style="background-color: rgb(178, 34, 34);"
         id="get_meal_btn">Search</button>
       </form> </center>
@@ -97,7 +97,7 @@
       <br>
 
     
-  <div id="meal" class="row-meal"></div>
+  <div id="meal" id="meal" class="row-meal"></div>
 
 <div class="row">
   <div class="col p-3 bg-primary text-white" style="background-color: rgb(255, 250, 205) !important;">
@@ -123,9 +123,9 @@
 
         <!--Aquí se utiliza un Toggle para desplazar la opción de dejar un email por medio de un botón-->
 
-        <Center><p style="color: rgb(0, 0, 0);">Here you can leave me a message of what you think, keep in mind that it will reach our email</p></Center><br>
+        <Center><p style="color: rgb(0, 0, 0);" id="messageText">Here you can leave me a message of what you think, keep in mind that it will reach our email</p></Center><br>
 
-        <div class="toggle" onclick="myFunction()">
+        <div class="toggle"  onclick="myFunction()" id="toggleButton">
           <button class="btn btn-success" style=" background-color: rgb(178, 34, 34);">Leave a message</button><br><br>
       </div>
       
@@ -137,19 +137,19 @@
               <form action="enviar_correo.php" method="POST">
 
               <!--Campos del formulario para enviar mensaje-->
-              <label for="email" style="color: rgb(0, 0, 0);">Email:</label>
+              <label for="email" style="color: rgb(0, 0, 0);" id="emailLabel">Email:</label>
               <input type="email" class="form-control" placeholder="Enter email" name="email" id="email" required><br>
 
-              <label for="nombre" style="color: rgb(0, 0, 0);">Name:</label>
+              <label for="nombre" style="color: rgb(0, 0, 0);" id="nameLabel">Name:</label>
               <input type="text" class="form-control" placeholder="Name" id="nombre" name="nombre" required><br>
 
-              <label for="mensaje" style="color: rgb(0, 0, 0);">Message:</label><br>
+              <label for="mensaje" style="color: rgb(0, 0, 0);" id="messageLabel">Message:</label><br>
               <textarea id="mensaje" class="form-control" name="mensaje" placeholder="Write a message..." required></textarea><br><br>
 
   
             </div>
             </form>
-            <Button style=" background-color: rgb(178, 34, 34);" onclick="alert('Proximamente :3')" id="get_meal_btn" class="btn rounded-pill w-15 text-white">Send</Button>
+            <Button style=" background-color: rgb(178, 34, 34);" onclick="alert('Proximamente :3')" id="sendButton"  class="btn round" ed-pill w-15 text-white">Send</Button>
               
                 </article>
               </div>  
