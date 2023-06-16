@@ -116,5 +116,5 @@ function getMealResults(url) {
     })
     .catch(function(err) {
       console.log(err)
-    })
+})
 }
