@@ -29,9 +29,9 @@ const createMeal = (meal) => {
   const agregandoComida = 
 
   `
-  <h1>${meal.strMeal}</h1>
+  <center><h1>${meal.strMeal}</h1>
 
-  <img src='${meal.strMealThumb}' alt="">
+  <img src='${meal.strMealThumb}' alt=""></center>
 
   <br>
   <br>
@@ -61,6 +61,14 @@ const createMeal = (meal) => {
   <h5>Instructions:</h5>
   <p>${meal.strInstructions}</p>
   
+  <center><div class="row">
+    <h5>Video Recipe</h5>
+    <div class="videoWrapper">
+      <iframe width="420" height="315"
+      src="https://www.youtube.com/embed/${meal.strYoutube.slice(-11)}">
+      </iframe>
+    </div>
+  </div></center>
   `
 ;
 
