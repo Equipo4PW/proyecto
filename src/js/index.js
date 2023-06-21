@@ -76,30 +76,26 @@ const createMeal = (meal) => {
 }
 
 //Buscar todo tipo de comida en la barra de búsqueda
-const searchInput = document.getElementById('search');
-const searchButton = document.getElementById('button');
-const results = document.getElementById('results');
+const searchInput = document.getElementById('buscador');
+const searchButton = document.getElementById('botonbuscador');
+const results = document.getElementById('resultados');
 
 searchButton.addEventListener('click', searchMeals);
 
 function searchMeals() {
   const search = searchInput.value;
 
-  if(search) {
+  if (search) {
     const formattedSearch = formatSearchString(search);
     const url = buildUrl(formattedSearch);
 
-    return getMealResults(url)
-      .then(function(meals) {
-        console.log(meals)
-        gifs.forEach(function(image) {
-          const img = document.createElement('img');
-          img.src = image.images.fixed_height.url;
-          img.alt = image.title;
-
-          results.appendChild(img)
-        })
+    getMealResults(url)
+      .then(function (meals) {
+        displayMealResults(meals);
       })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 }
 
@@ -107,11 +103,10 @@ function formatSearchString(search) {
   return search.replace(/ /g, '+');
 }
 
-function buildUrl (search) {
-  const API_KEY = '1'; // llave de GIPHY
-  const baseUrl = 'www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata';
+function buildUrl(search) {
+  const baseUrl = 'https://www.themealdb.com/api/json/v1/1/search.php';
 
-  return `${baseUrl}?q=${search}&api_key=${API_KEY}&limit=9`;
+  return `${baseUrl}?s=${search}`;
 }
 
 function getMealResults(url) {
@@ -120,9 +115,24 @@ function getMealResults(url) {
       return response.json();
     })
     .then(function (data) {
-      return data.data
+      return data.meals;
     })
-    .catch(function(err) {
-      console.log(err)
-})
+    .catch(function (err) {
+      console.log(err);
+    });
+}
+
+function displayMealResults(meals) {
+  results.innerHTML = '';
+
+  if (meals) {
+    meals.forEach(function (meal) {
+      const img = document.createElement('img');
+      img.src = meal.strMealThumb;
+      img.alt = meal.strMeal;
+      results.appendChild(img);
+    });
+  } else {
+    results.textContent = 'No se encontraron resultados.';
+  }
 }
