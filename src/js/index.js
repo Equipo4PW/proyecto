@@ -90,11 +90,57 @@ $(document).ready(function() {
               data.meals.forEach(function(meal) {
                   // Crear un elemento para mostrar la comida
                   var mealElement = $('<div class="meal">');
-                  var mealName = $('<h3>').text(meal.strMeal);
-                  var mealCategory = $('<p>').text('Categoría: ' + meal.strCategory);
+                  var mealName = $('<h1>').text(meal.strMeal);
+
+                 
                   var mealThumbnail = $('<img>').attr('src', meal.strMealThumb);
 
-                  mealElement.append(mealName, mealCategory, mealThumbnail);
+                  var mealIngredient1 = $('<h6>').text(meal.strIngredient1);
+                  var mealIngredient2 = $('<h6>').text(meal.strIngredient2);
+                  var mealIngredient3 = $('<h6>').text(meal.strIngredient3);
+                  var mealIngredient4 = $('<h6>').text(meal.strIngredient4);
+                  var mealIngredient5 = $('<h6>').text(meal.strIngredient5);
+                  var mealIngredient6 = $('<h6>').text(meal.strIngredient6);
+                  var mealIngredient7 = $('<h6>').text(meal.strIngredient7);
+                  var mealIngredient8 = $('<h6>').text(meal.strIngredient8);
+                  var mealIngredient9 = $('<h6>').text(meal.strIngredient9);
+                  var mealIngredient10 = $('<h6>').text(meal.strIngredient10);
+                  var mealIngredient11 = $('<h6>').text(meal.strIngredient11);
+                  var mealIngredient12 = $('<h6>').text(meal.strIngredient12);
+                  var mealIngredient13 = $('<h6>').text(meal.strIngredient13);
+                  var mealIngredient14 = $('<h6>').text(meal.strIngredient14);
+                  var mealIngredient15 = $('<h6>').text(meal.strIngredient15);
+                  var mealIngredient16 = $('<h6>').text(meal.strIngredient16);
+                  var mealIngredient17 = $('<h6>').text(meal.strIngredient17);
+                  var mealIngredient18 = $('<h6>').text(meal.strIngredient18);
+                  var mealIngredient19 = $('<h6>').text(meal.strIngredient19);
+                  var mealIngredient20 = $('<h6>').text(meal.strIngredient20);
+                  
+                  var mealInstructions = $('<p>').text('Instructions: ' + meal.strInstructions);
+        
+                  mealElement.append(mealName, mealThumbnail,
+                    mealIngredient1,
+                    mealIngredient2,
+                    mealIngredient3,
+                    mealIngredient4,
+                    mealIngredient5,
+                    mealIngredient6,
+                    mealIngredient7,
+                    mealIngredient8,
+                    mealIngredient9,
+                    mealIngredient10,
+                    mealIngredient11,
+                    mealIngredient12,
+                    mealIngredient13,
+                    mealIngredient14,
+                    mealIngredient15,
+                    mealIngredient16,
+                    mealIngredient17,
+                    mealIngredient18,
+                    mealIngredient19,
+                    mealIngredient20,
+                     mealInstructions,
+                     mealVideo);
                   $('#mealResults').append(mealElement);
               });
           } else {
