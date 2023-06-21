@@ -30,7 +30,11 @@ button .oscuro {
     border: 2px solid black;
 }
 
-
+    .meal {
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
 /*-------------------------------------- Aquí empiezan los media querys --------------------------------------*/
 
 @media (max-width: 575px) {

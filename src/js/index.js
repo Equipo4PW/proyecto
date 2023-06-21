@@ -75,64 +75,44 @@ const createMeal = (meal) => {
   meal_container.innerHTML = agregandoComida;
 }
 
-//Buscar todo tipo de comida en la barra de búsqueda
-const searchInput = document.getElementById('buscador');
-const searchButton = document.getElementById('botonbuscador');
-const results = document.getElementById('resultados');
+// Buscar todo tipo de comida en la barra de búsqueda
+$(document).ready(function() {
+  // Función para realizar la búsqueda
+  function searchMeal() {
+      var inputValue = $('#mealInput').val();
+      var apiUrl = 'https://www.themealdb.com/api/json/v1/1/search.php?s=' + inputValue;
 
-searchButton.addEventListener('click', searchMeals);
+      $.get(apiUrl, function(data) {
+          // Limpiar el div de resultados
+          $('#mealResults').empty();
 
-function searchMeals() {
-  const search = searchInput.value;
+          if (data.meals) {
+              data.meals.forEach(function(meal) {
+                  // Crear un elemento para mostrar la comida
+                  var mealElement = $('<div class="meal">');
+                  var mealName = $('<h3>').text(meal.strMeal);
+                  var mealCategory = $('<p>').text('Categoría: ' + meal.strCategory);
+                  var mealThumbnail = $('<img>').attr('src', meal.strMealThumb);
 
-  if (search) {
-    const formattedSearch = formatSearchString(search);
-    const url = buildUrl(formattedSearch);
-
-    getMealResults(url)
-      .then(function (meals) {
-        displayMealResults(meals);
-      })
-      .catch(function (error) {
-        console.log(error);
+                  mealElement.append(mealName, mealCategory, mealThumbnail);
+                  $('#mealResults').append(mealElement);
+              });
+          } else {
+              // Mostrar mensaje si no se encontraron resultados
+              $('#mealResults').text('No se encontraron resultados');
+          }
       });
   }
-}
 
-function formatSearchString(search) {
-  return search.replace(/ /g, '+');
-}
+  // Asignar la función de búsqueda al hacer clic en el botón
+  $('#searchButton').click(function() {
+      searchMeal();
+  });
 
-function buildUrl(search) {
-  const baseUrl = 'https://www.themealdb.com/api/json/v1/1/search.php';
-
-  return `${baseUrl}?s=${search}`;
-}
-
-function getMealResults(url) {
-  return fetch(url)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      return data.meals;
-    })
-    .catch(function (err) {
-      console.log(err);
-    });
-}
-
-function displayMealResults(meals) {
-  results.innerHTML = '';
-
-  if (meals) {
-    meals.forEach(function (meal) {
-      const img = document.createElement('img');
-      img.src = meal.strMealThumb;
-      img.alt = meal.strMeal;
-      results.appendChild(img);
-    });
-  } else {
-    results.textContent = 'No se encontraron resultados.';
-  }
-}
+  // Asignar la función de búsqueda al presionar Enter en el campo de entrada
+  $('#mealInput').keypress(function(event) {
+      if (event.which === 13) {
+          searchMeal();
+      }
+  });
+});

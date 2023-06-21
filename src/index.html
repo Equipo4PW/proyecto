@@ -7,6 +7,8 @@
     <title>Mascó Mida - Inicio</title>
     <link rel="stylesheet" href="styles.css"> 
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="C:\Users\Jennifer Lemus\Documents\proyecto\src\js\index.js"></script>
 
     <script type="text/javascript">
       function sendEmail() {
@@ -82,11 +84,11 @@
       <center><h2 class= "fh" id="hungerHeading">Feeling hungry?</h2></center>
       
       <center><form class="holis">
-        <input class="h2o rounded-pill" type="text" placeholder="Search for a meal..." style="width: 650px;" id="buscador">
-        <button type="submit" class="btn rounded-pill w-15 text-white" style="background-color: rgb(178, 34, 34);"
-        id="botonbuscador">Search</button>
+        <input class="h2o rounded-pill" type="text" placeholder="Search for a meal..." style="width: 650px;" id="mealInput">
+        <button type="submit" class="btn rounded-pill w-15 text-white" style="background-color: rgb(178, 34, 34);" id="searchButton">Search</button>
 
-        <div id="resultados"></div>
+        <div id="mealResults"></div>
+
       </form> </center>
       <br>
       <br>
@@ -126,9 +128,9 @@
 
         <Center><p style="color: rgb(0, 0, 0);" id="messageText">Here you can leave me a message of what you think, keep in mind that it will reach our email</p></Center><br>
 
-        <div class="toggle"  onclick="myFunction()" id="toggleButton">
-          <button class="btn btn-success" style=" background-color: rgb(178, 34, 34);">Leave a message</button><br><br>
-      </div>
+        <!--<div class="toggle"  onclick="myFunction()" id="toggleButton">-->
+          <button class="btn btn-success toggle" onclick="myFunction()" id="toggleButton" style=" background-color: rgb(178, 34, 34);">Leave a message</button><br><br>
+      <!--</div>-->
       
         <div id="myDIV">
           <article class="formulario">
