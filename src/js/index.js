@@ -139,8 +139,7 @@ $(document).ready(function() {
                     mealIngredient18,
                     mealIngredient19,
                     mealIngredient20,
-                     mealInstructions,
-                     mealVideo);
+                     mealInstructions);
                   $('#mealResults').append(mealElement);
               });
           } else {
